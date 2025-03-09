@@ -1,39 +1,29 @@
-# 🏷️ Go URL Shortener
+🏷️ Go URL Shortener
 
-A simple **URL Shortener API** built with **Golang**, **Gin**, **PostgreSQL**, and **Redis**.  
+A simple URL Shortener API built with Golang, Gin, PostgreSQL, and Redis.
 It allows users to generate short URLs, store them in a database, and retrieve the original long URLs.
+🚀 Features
 
----
+    Shorten URLs 🔗
+    Redirect to Original URL 🌍
+    Rate Limiting 🛑 (Prevents spam)
+    Redis Caching ⚡ (Faster lookups)
+    Swagger API Docs 📖
+    Dockerized Deployment 🐳
 
-## 🚀 Features
+📦 Tech Stack
 
-- **Shorten URLs** 🔗
-- **Redirect to Original URL** 🌍
-- **Rate Limiting** 🛑 (Prevents spam)
-- **Redis Caching** ⚡ (Faster lookups)
-- **Swagger API Docs** 📖
-- **Dockerized Deployment** 🐳
+    Go (Gin Framework) 🏗️
+    PostgreSQL (Database) 🗄️
+    Redis (Caching) 🚀
+    Docker & Docker Compose 🐳
+    Swagger (API Documentation) 📄
 
----
+🛠️ Installation & Setup
+1️⃣ Clone the Repository
 
-## 📦 Tech Stack
-
-- **Go** (Gin Framework) 🏗️
-- **PostgreSQL** (Database) 🗄️
-- **Redis** (Caching) 🚀
-- **Docker & Docker Compose** 🐳
-- **Swagger** (API Documentation) 📄
-
----
-
-## 🛠️ Installation & Setup
-
-### **1️⃣ Clone the Repository**
-
-```sh
 git clone https://github.com/mohamedelbalshy/go-url-shortener.git
 cd go-url-shortener
-```
 
 2️⃣ Configure Environment Variables
 
@@ -132,14 +122,10 @@ Push to GitHub:
 📝 License
 
 This project is MIT Licensed. Feel free to use and modify it! 🚀
+🚀 Next Steps
 
----
-
-## **🚀 Next Steps**
-
-Would you like to:
-1️⃣ **Set up CI/CD with GitHub Actions?**  
-2️⃣ **Deploy this app to AWS or DigitalOcean?**  
-3️⃣ **Add unit tests for controllers and services?**
+Would you like to: 1️⃣ Set up CI/CD with GitHub Actions?
+2️⃣ Deploy this app to AWS or DigitalOcean?
+3️⃣ Add unit tests for controllers and services?
 
 Let me know! 🔥
