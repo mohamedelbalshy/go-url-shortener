@@ -1,0 +1,94 @@
+basePath: /api/v1
+definitions:
+  url.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  url.ShortenURLRequest:
+    properties:
+      long_url:
+        type: string
+    type: object
+  url.ShortenedURL:
+    properties:
+      created_at:
+        description: Timestamp
+        type: string
+      deleted_at:
+        description: Nullable Timestamp
+        type: string
+      id:
+        description: Primary Key
+        type: integer
+      long_url:
+        type: string
+      short_url:
+        type: string
+      updated_at:
+        description: Timestamp
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact:
+    email: support@example.com
+    name: API Support
+  description: A simple URL shortener service built with Gin and PostgreSQL
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+  termsOfService: http://swagger.io/terms/
+  title: Golang URL Shortener API
+  version: "1.0"
+paths:
+  /url/{short_url}:
+    get:
+      description: Fetches long URL from short URL and redirects
+      parameters:
+      - description: Short URL
+        in: path
+        name: short_url
+        required: true
+        type: string
+      responses:
+        "302":
+          description: Found
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/url.ErrorResponse'
+      summary: Redirect to long URL
+      tags:
+      - URL
+  /url/shorten:
+    post:
+      consumes:
+      - application/json
+      description: Generates a short URL for a given long URL
+      parameters:
+      - description: Long URL
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/url.ShortenURLRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/url.ShortenedURL'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/url.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/url.ErrorResponse'
+      summary: Shorten a URL
+      tags:
+      - URL
+swagger: "2.0"
