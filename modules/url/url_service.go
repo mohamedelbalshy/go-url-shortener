@@ -12,11 +12,17 @@ import (
 	"go-url-shortener/database"
 )
 
+// Service interface
+type URLServiceInterface interface {
+	GenerateShortURL(longURL string) (*ShortenedURL, error)
+	GetLongURL(shortURL string) (*ShortenedURL, error)
+}
+
 type URLService struct {
 	repo *URLRepository
 }
 
-func NewURLService(repo *URLRepository) *URLService {
+func NewURLService(repo *URLRepository) URLServiceInterface {
 	return &URLService{repo: repo}
 }
 

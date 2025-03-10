@@ -6,6 +6,11 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+type URLControllerInterface interface {
+	ShortenURL(ctx *gin.Context)
+	RedirectToLongURL(ctx *gin.Context)
+}
+
 // ShortenURLRequest defines the request body for shortening a URL
 type ShortenURLRequest struct {
 	LongURL string `json:"long_url"`
@@ -13,10 +18,10 @@ type ShortenURLRequest struct {
 
 // URLController handles URL shortening and redirection
 type URLController struct {
-	service *URLService
+	service URLServiceInterface
 }
 
-func NewURLController(service *URLService) *URLController {
+func NewURLController(service URLServiceInterface) URLControllerInterface {
 	return &URLController{service: service}
 }
 
