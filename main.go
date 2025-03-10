@@ -10,16 +10,6 @@ import (
 	"os"
 )
 
-// @title Golang URL Shortener API
-// @version 1.0
-// @description A simple URL shortener service built with Gin and PostgreSQL
-// @termsOfService http://swagger.io/terms/
-// @contact.name API Support
-// @contact.email support@example.com
-// @license.name MIT
-// @license.url https://opensource.org/licenses/MIT
-// @host localhost:8080
-// @BasePath /api/v1
 func main() {
 	config.LoadEnv()
 	database.Connect()
